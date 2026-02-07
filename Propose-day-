@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propose Day Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <p class="line line1">You’re my sun that lights my day ☀️</p>
+    <p class="line line2">You chase all my dark clouds away 🌙</p>
+    <p class="line line3">You’re my home, my heart, my guide 🏡💛</p>
+    <p class="line line4">So… will you be forever by my side? 🫶</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #FFD6A5, #FFADAD, #FDFFB6);
+  font-family: 'Segoe Script', cursive;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.line {
+  opacity: 0;
+  margin: 1rem 0;
+}
+const lines = document.querySelectorAll('.line');
+
+lines.forEach((line, index) => {
+  setTimeout(() => {
+    line.style.opacity = 1;
+    line.style.transition = 'opacity 1s ease, transform 1s ease';
+    line.style.transform = 'translateY(0)';
+  }, index * 2500);
+});
